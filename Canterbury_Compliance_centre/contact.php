@@ -1,7 +1,7 @@
 <?php include "header.php" ?>
     <!-- header-end -->
              <!-- bradcam_area  -->
-             <div class="bradcam_area" style="background-image: url('img/banner/servicebanner.jpg')">
+             <div class="bradcam_area" style="background-image: url('img/banner/servicebannerabout.png')">
                  <div class="container">
                      <div class="row">
                          <div class="col-xl-12">
