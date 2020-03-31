@@ -1,22 +1,9 @@
 <?php
-/*
-************************************************************
-Long name  : Internet Project Framework
-Short name : IPF
-Author     : Alexey Abramov
-E-mail     : abramov.developer@gmail.com
-LinkedIn   : https://www.linkedin.com/in/alexey-abramov-kz/
-City       : Christchurch / NewZealand
-Year       : 2020
-************************************************************
-*/
-?>
-
-<?php
 //No error will be shown
 error_reporting(0);
 
 //Create a new MySQL instance
+$connect = mysqli_connect("localhost", "root", "", "ccc");
 $mysqli = new mysqli("localhost", "root", "", "ccc");
 
 //In case there is an error in connection then we print a message

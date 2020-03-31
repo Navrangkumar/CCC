@@ -15,38 +15,24 @@
   <div class="container">
 
     <ul class="row">
+      <?php
+
+      $query = "SELECT * FROM tblteam";
+      $result = mysqli_query($connect, $query);
+      while($row = mysqli_fetch_array($result))
+      {
+?>
       <li class="col-12 col-md-6 col-lg-3">
           <div class="cnt-block equal-hight" style="height: 349px;">
-            <figure><img src="http://www.webcoderskull.com/img/team4.png" class="img-responsive" alt=""></figure>
-            <h3><a href="http://www.webcoderskull.com/">Web coder skull</a></h3>
-            <p>Freelance Web Developer</p>
+            <figure>
+              <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($row['photo'] ).'" class="img-responsive" alt="">  ';?></figure>
+            <h3><a href="#"><?php echo $row["fullname"] ; ?></a></h3>
+            <p><?php echo $row["designation"] ; ?></p>
 
           </div>
       </li>
-      <li class="col-12 col-md-6 col-lg-3">
-          <div class="cnt-block equal-hight" style="height: 349px;">
-            <figure><img src="http://www.webcoderskull.com/img/team1.png" class="img-responsive" alt=""></figure>
-            <h3><a href="#">Kappua </a></h3>
-            <p>Freelance Web Developer</p>
-
-          </div>
-      </li>
-      <li class="col-12 col-md-6 col-lg-3">
-          <div class="cnt-block equal-hight" style="height: 349px;">
-            <figure><img src="http://www.webcoderskull.com/img/team4.png" class="img-responsive" alt=""></figure>
-            <h3><a href="http://www.webcoderskull.com/">Manish </a></h3>
-            <p>Freelance Web Developer</p>
-
-          </div>
-       </li>
-      <li class="col-12 col-md-6 col-lg-3">
-          <div class="cnt-block equal-hight" style="height: 349px;">
-            <figure><img src="http://www.webcoderskull.com/img/team2.png" class="img-responsive" alt=""></figure>
-            <h3><a href="http://www.webcoderskull.com/">Atul </a></h3>
-            <p>Freelance Web Developer</p>
-
-          </div>
-      </li>
+      <?php
+      }  ?>
 
     </ul>
   </div>

@@ -35,6 +35,9 @@
     <?php
 $conn =mysqli_connect('localhost','root','','ccc') or die('Connection Error');
     ?>
+    <?php
+    	include $_SERVER['DOCUMENT_ROOT'] . "/CCC/config.php";
+    ?>
 </head>
 
 <body>
