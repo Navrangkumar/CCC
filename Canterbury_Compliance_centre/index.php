@@ -19,9 +19,8 @@
                         <div class="icon">
                             <img src="img/svg_icon/airplane.png" alt="">
                         </div>
-                        <h3>Transportation</h3>
-                        <p>Esteem spirit temper too say adieus who direct esteem. It look estee luckily or picture
-                            placing drawing.</p>
+                        <h3>SPECIALISE</h3>
+                        <p>WE SPECIALISE IN EUROPEAN AND JAPANESE VEHICLES.</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
@@ -29,9 +28,8 @@
                         <div class="icon">
                             <img src="img/svg_icon/live.png" alt="">
                         </div>
-                        <h3>Live Monitoring</h3>
-                        <p>Esteem spirit temper too say adieus who direct esteem. It look estee luckily or picture
-                            placing drawing.</p>
+                        <h3>100% UNDERCOVER</h3>
+                        <p>All cars are stored safely, ensuring the cars are all day safe from the rain and sunlight.</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
@@ -39,9 +37,8 @@
                         <div class="icon">
                             <img src="img/svg_icon/world.png" alt="">
                         </div>
-                        <h3>Worldwide Service</h3>
-                        <p>Esteem spirit temper too say adieus who direct esteem. It look estee luckily or picture
-                            placing drawing.</p>
+                        <h3>FAST TURNAROUND</h3>
+                        <p>Processing more then 30 vehicles complied with every days.</p>
                     </div>
                 </div>
             </div>
