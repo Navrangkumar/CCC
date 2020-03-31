@@ -1,4 +1,4 @@
-cd /c/xampp/htdocs/ccc
+cd /c/xampp/htdocs1/ccc
 git status
 git add .
 git status

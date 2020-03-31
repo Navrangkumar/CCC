@@ -20,44 +20,57 @@
                       </div>
                   </div>
                   <div class="panel-body">
+                    <?php
+
+                    $query = "SELECT * FROM owner where id=1";
+                    $result = mysqli_query($connect, $query);
+      ?>
 
                     <form>
+                      <?php
+                      while($row = mysqli_fetch_array($result))
+                      {
+                        ?>
                         <div class="form-group">
                             <label for="username">User Name</label>
-                            <input type="text" class="form-control" id="username">
+                            <input type="text" class="form-control" id="username" value="<?php echo $row["username"] ; ?>">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password" >
+                            <input type="text" class="form-control" id="password" value="<?php echo $row["password"] ; ?>" >
                         </div>
                         <div class="form-group">
                             <label for="mobileno">Mobile No</label>
-                            <input type="text" class="form-control" id="mobileno" >
+                            <input type="text" class="form-control" id="mobileno" value="<?php echo $row["mobileNo"] ; ?>" >
                         </div>
                         <div class="form-group">
                             <label for="emailid">Email ID</label>
-                            <input type="text" class="form-control" id="emailid" >
+                            <input type="text" class="form-control" id="emailid" value="<?php echo $row["emailId"] ; ?>" >
                         </div>
                         <div class="form-group">
                             <label for="address1">Plot No , Stree Name</label>
-                            <input type="text" class="form-control" id="address1" >
+                            <input type="text" class="form-control" id="address1" value="<?php echo $row["address1"] ; ?>" >
                         </div>
                         <div class="form-group">
                             <label for="address2">Suburb, City</label>
-                            <input type="text" class="form-control" id="address2" >
+                            <input type="text" class="form-control" id="address2" value="<?php echo $row["address2"] ; ?>" >
                         </div>
                         <div class="form-group">
                             <label for="address3">Region, Country</label>
-                            <input type="text" class="form-control" id="address3" >
+                            <input type="text" class="form-control" id="address3" value="<?php echo $row["address3"] ; ?>" >
                         </div>
                         <div class="form-group">
                             <label for="hours">Hours</label>
-                            <input type="text" class="form-control" id="hours" >
+                            <input type="text" class="form-control" id="hours" value="<?php echo $row["hours"] ; ?>" >
                         </div>
 
 
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-info">Submit</button>
+                        <?php
+                        }  ?>
+
                     </form>
+
                   </div>
               </div>
           </div>

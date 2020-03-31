@@ -1,6 +1,11 @@
 
 $(document).ready(function() {
 
+  function validateEmail($email) {
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      return emailReg.test($email);
+  }
+
     $('.only_integers_allowed').on('keyup keypress', function(e) {
         if (e.keyCode == 8 || e.keyCode == 46) {} else {
             var letters = '1234567890';
@@ -44,7 +49,14 @@ $(document).ready(function() {
             $('#email_warning_message').html('Email should be filled');
             $("#email_warning_message").switchClass("d-none", "d-block");
             pError = true;
-        }  else {
+        } else if (!validateEmail(email)) {
+            $('#email_warning_message').html('The email field must be valid');
+            $("#email_warning_message").switchClass("d-none", "d-block");
+            pError = true;
+		//If there are no mistakes then we hide a message below it
+        }
+
+        else {
             $("#email_warning_message").switchClass("d-block", "d-none");
         }
 

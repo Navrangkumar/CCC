@@ -17,22 +17,38 @@
               <div class="panel panel-default">
                   <div class="panel-heading">
                       <div class="card-title">
-                          <div class="title">Update Details</div>
+                          <div class="title">Update About Us Details</div>
                       </div>
                   </div>
                   <div class="panel-body">
                       <form>
+                        <?php
 
+                        $query = "SELECT * FROM tblaboutus ORDER BY id=1";
+                        $result = mysqli_query($connect, $query);
+                        while($row = mysqli_fetch_array($result))
+                        {
+                      ?>
                           <div class="form-group">
-                              
-                              <textarea class="form-control" id="txtEditor"></textarea>
+
+                              <textarea class="form-control"  id="edtAboutus" name="edtAboutus" ><?php echo $row["about"] ; ?>
+                              </textarea>
+
                           </div>
 
-                          <button type="submit" class="btn btn-default">Submit</button>
+                          <button type="submit" class="btn btn-info" id="'.$row["id"].'">Update</button>
+                          <?php
+                          }  ?>
+
                       </form>
                   </div>
               </div>
           </div>
       </div>
     </div>
+
+
 <?php include "footer.php" ?>
+<script>
+       CKEDITOR.replace( 'edtAboutus' );
+</script>

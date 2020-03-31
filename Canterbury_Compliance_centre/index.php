@@ -57,44 +57,31 @@
                 </div>
             </div>
             <div class="row">
+              <?php
+
+              $query = "SELECT * FROM tblservices ORDER BY s_id DESC";
+              $result = mysqli_query($connect, $query);
+?>
                 <div class="col-xl-12">
                     <div class="service_active owl-carousel">
+                      <?php
+                      while($row = mysqli_fetch_array($result))
+                      {
+                        ?>
                         <div class="single_service">
+                        <?php  echo '
                             <div class="thumb">
-                                <img src="img/service/5.png" alt="">
+                                <img src="data:image/jpeg;base64,'.base64_encode($row['s_img'] ).'" alt="">
                             </div>
+                            ';?>
                             <div class="service_info">
-                                <h3><a href="service_details.php">Vehicle Compliance</a></h3>
-                                <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                                <h3><a href="service_details.php"><?php echo $row["name"] ; ?></a></h3>
+
                             </div>
                         </div>
-                        <div class="single_service">
-                            <div class="thumb">
-                                <img src="img/service/2.png" alt="">
-                            </div>
-                            <div class="service_info">
-                                <h3><a href="service_details.php">Vehicle Importing</a></h3>
-                                <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            </div>
-                        </div>
-                        <div class="single_service">
-                            <div class="thumb">
-                                <img src="img/service/repair.jpg" alt="">
-                            </div>
-                            <div class="service_info">
-                                <h3><a href="service_details.php">Mechanical Repairs</a></h3>
-                                <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            </div>
-                        </div>
-                        <div class="single_service">
-                            <div class="thumb">
-                                <img src="img/service/services.png" alt="">
-                            </div>
-                            <div class="service_info">
-                                <h3><a href="service_details.php">Warrant Of Fitness</a></h3>
-                                <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                            </div>
-                        </div>
+                        <?php
+                        }  ?>
+
                     </div>
                 </div>
             </div>
@@ -124,7 +111,7 @@
                             </ul>
 
                             <div class="about_btn">
-                                <a class="boxed-btn3-line" href="about.html">About Us</a>
+                                <a class="boxed-btn3-line" href="about.php">About Us</a>
                             </div>
                         </div>
                     </div>
@@ -174,49 +161,30 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="testmonial_active owl-carousel">
+                      <?php
+
+                      $query = "SELECT * FROM tbltestimonial where approved=1 ORDER BY id DESC";
+                      $result = mysqli_query($connect, $query);
+                      while($row = mysqli_fetch_array($result))
+                      {
+        ?>
                         <div class="single_carousel">
                             <div class="single_testmonial text-center">
                                 <div class="quote">
                                     <img src="img/svg_icon/quote.svg" alt="">
                                 </div>
-                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
-                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
+                                <p><?php echo $row["testimonials"] ; ?></p>
                                 <div class="testmonial_author">
                                   <div class="thumb">
                                   </div>
-                                    <h3>Robert Thomson</h3>
+                                    <h3><?php echo $row["fullname"] ; ?></h3>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="single_carousel">
-                            <div class="single_testmonial text-center">
-                                <div class="quote">
-                                    <img src="img/svg_icon/quote.svg" alt="">
-                                </div>
-                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
-                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
-                                <div class="testmonial_author">
-                                    <div class="thumb">
-                                    </div>
-                                    <h3>Robert Thomson</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="single_testmonial text-center">
-                                <div class="quote">
-                                    <img src="img/svg_icon/quote.svg" alt="">
-                                </div>
-                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
-                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
-                                <div class="testmonial_author">
-                                    <div class="thumb">
-                                    </div>
-                                    <h3>Robert Thomson</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        }  ?>
+
                     </div>
                 </div>
             </div>
@@ -237,20 +205,25 @@
                 <div class="col-xl-12 col-lg-8 col-md-7">
                     <div class="form">
                         <form action="#">
+                          <div class="form-group">
+                        <div id="message" class="alert alert-danger mt-1 d-none align-middle text-center"></div>
+                    </div>
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <input type="text" placeholder="Your name">
+                                        <input type="text" id="fullname" name="fullname" placeholder="Your name">
+                                        <div id="fullname_warning_message" class="text-danger mt-1 d-none"></div>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <textarea placeholder="Message"></textarea>
+                                        <textarea id="comment" name="comment" placeholder="Message"></textarea>
+                                        <div id="comment_warning_message" class="text-danger mt-1 d-none"></div>
                                     </div>
                                 </div>
                                 <div class="col-xl-4">
                                     <div class="input_field">
-                                        <button class="boxed-btn3-line" type="submit">Submit</button>
+                                        <button class="boxed-btn3-line feedbackquery" type="button">Submit</button>
                                     </div>
                                 </div>
                             </div>

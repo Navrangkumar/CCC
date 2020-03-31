@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<!--
-Template Name: BRILLIANT Bootstrap Admin Template
-Version: 4.5.6
-Author: WebThemez
-Website: http://www.webthemez.com/
--->
+
+<?php
+	include $_SERVER['DOCUMENT_ROOT'] . "/CCC/config.php";
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>Bootstrap HTML5 Admin Template : Master - WebThemez</title>
+    <title>Canterbury Compliance Centre Admin Panel</title>
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
 
@@ -53,7 +50,7 @@ Website: http://www.webthemez.com/
                         </li>
 
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="/CCC/Canterbury_compliance_centre/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -66,28 +63,13 @@ Website: http://www.webthemez.com/
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
-                    <li>
-                       <a href="#"><i class="fa fa-sitemap"></i> Manage Enquiry Details<span class="fa arrow"></span></a>
-                       <ul class="nav nav-second-level">
-                           <li>
-                               <a href="index.php">Service Eastimate Details</a>
-                           </li>
-                           <li>
-                               <a href="contact.php">Contact Details</a>
-                           </li>
-                                </ul>
-                 </li>
-					           <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Manage Services<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="InsertServices.php">Add Services</a>
-                            </li>
-                            <li>
-                                <a href="UpdateDeleteService.php">Change Services</a>
-                            </li>
-							                   </ul>
-						      </li>
+
+								 		<li>
+										 <a href="index.php"><i class="fa fa-qrcode"></i> Manage Enquiry Details</a>
+								 		</li>
+					          <li>
+                        <a href="InsertServices.php"><i class="fa fa-qrcode"></i> Manage Services</a>
+						      	</li>
                     <li>
                         <a href="Testmonials.php"><i class="fa fa-qrcode"></i>Testmonials</a>
                     </li>
@@ -100,6 +82,9 @@ Website: http://www.webthemez.com/
                     </li>
                     <li>
                         <a href="manageEmployee.php"><i class="fa fa-qrcode"></i>Manage Employee Details</a>
+                    </li>
+										<li>
+                        <a href="contact.php"><i class="fa fa-qrcode"></i>Manage Contact Us</a>
                     </li>
                 </ul>
 
